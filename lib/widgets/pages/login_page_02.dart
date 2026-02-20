@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginPage2 extends StatelessWidget {
+  const LoginPage2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class LoginPage extends StatelessWidget {
               _outlineButton(
                 text: "Create Account",
                 onPressed: () {
-                  Navigator.pushNamed(context, '/register');
+                  Navigator.pushNamed(context, '/register2');
                 },
               ),
 

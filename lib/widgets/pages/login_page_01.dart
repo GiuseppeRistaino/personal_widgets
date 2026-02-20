@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginPage1 extends StatelessWidget {
+  const LoginPage1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +136,7 @@ class LoginPage extends StatelessWidget {
                       Center(
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/register');
+                            Navigator.pushNamed(context, '/register1');
                           },
                           child: const Text(
                             "Don't have an account? Sign Up",

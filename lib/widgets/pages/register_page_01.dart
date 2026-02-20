@@ -1,8 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class RegisterPage1 extends StatelessWidget {
+  const RegisterPage1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class RegisterPage extends StatelessWidget {
                       Center(
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.pushReplacementNamed(context, '/');
+                            Navigator.pushNamed(context, '/login1');
                           },
                           child: const Text(
                             "Already have an account? Login",

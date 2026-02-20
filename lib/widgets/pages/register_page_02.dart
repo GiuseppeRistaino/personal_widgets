@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class RegisterPage2 extends StatelessWidget {
+  const RegisterPage2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class RegisterPage extends StatelessWidget {
               _outlineButton(
                 text: "Back to Login",
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/login2');
                 },
               ),
 
