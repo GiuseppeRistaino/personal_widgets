@@ -68,6 +68,16 @@ class ChoicePage extends StatelessWidget {
                   Icons.account_tree_outlined,
                   "/content1",
                 ),
+
+                SizedBox(height: 20),
+
+                buildMenuButton(
+                  context,
+                  "Task Page 01",
+                  Icons.account_tree_outlined,
+                  "/task1",
+                ), 
+                
               ],
             ),
           ),

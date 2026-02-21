@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../widgets/backgrounds.dart';
 
 class LoginPage1 extends StatelessWidget {
   const LoginPage1({super.key});
@@ -10,21 +11,7 @@ class LoginPage1 extends StatelessWidget {
       body: Stack(
         children: [
           // Background Image
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("images/bg_01.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-
-          // Dark overlay
-          Container(
-            color: Colors.black.withValues(
-              alpha: 0.4
-            ),
-          ),
+          const CoverBackground(image: AssetImage("images/bg_01.jpg")),
 
           // Centered Glass Card
           Center(
