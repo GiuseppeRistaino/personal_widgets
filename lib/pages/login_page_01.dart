@@ -1,6 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../widgets/backgrounds.dart';
+import '../widgets/icons.dart';
+import '../widgets/cards.dart';
+import '../widgets/forms.dart';
 
 class LoginPage1 extends StatelessWidget {
   const LoginPage1({super.key});
@@ -12,8 +15,75 @@ class LoginPage1 extends StatelessWidget {
         children: [
           // Background Image
           const CoverBackground(image: AssetImage("images/bg_01.jpg")),
+          
+          Center(
+            child: GlassCard(
+              height: 550,
+              child: LoginForm(
+                title: const Text(
+                  "LOGIN",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.5,
+                  ),
+                ),
 
-          // Centered Glass Card
+                emailField: _buildTextField("Email or username"),
+
+                passwordField: _buildTextField("Password", isPassword: true),
+
+                forgotPassword: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    "Forgot password?",
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.8),
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+
+                socialSection: const SocialIcons(),
+
+                loginButton: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      "LOGIN",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+
+                registerSection: Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/register1');
+                    },
+                    child: const Text(
+                      "Don't have an account? Sign Up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          /* Centered Glass Card
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30),
@@ -82,16 +152,7 @@ class LoginPage1 extends StatelessWidget {
 
                       const SizedBox(height: 20),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          _socialIcon(Icons.g_mobiledata, Colors.red),
-                          const SizedBox(width: 20),
-                          _socialIcon(Icons.facebook, Colors.blue),
-                          const SizedBox(width: 20),
-                          _socialIcon(Icons.alternate_email, Colors.lightBlue),
-                        ],
-                      ),
+                      SocialIcons(),
 
                       const SizedBox(height: 20),
 
@@ -141,6 +202,7 @@ class LoginPage1 extends StatelessWidget {
               ),
             ),
           ),
+        */
         ],
       ),
     );
@@ -167,18 +229,6 @@ class LoginPage1 extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide.none,
         ),
-      ),
-    );
-  }
-
-  Widget _socialIcon(IconData icon, Color color) {
-    return CircleAvatar(
-      radius: 22,
-      backgroundColor: Colors.white,
-      child: Icon(
-        icon,
-        color: color,
-        size: 28,
       ),
     );
   }
